@@ -3,7 +3,7 @@
 Balanceamento de carga entre 2 ou mais containers
 
 ## Porta
-9000
+8090
 
 ## Container
 PHP

@@ -28,6 +28,6 @@ services:
       options:
         max-size: "100m"
     ports:
-      - 9000:9000
+      - 8090:8090
     volumes:
       - ./conf/default.conf:/etc/nginx/conf.d/default.conf
