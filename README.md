@@ -2,4 +2,11 @@
 
 Balanceamento de carga entre 2 ou mais containers
 
-Rodando na porta 9000
+## Porta
+9000
+
+## Container
+PHP
+## Autores
+
+- [@flavio-r](https://www.github.com/flavio-r)
