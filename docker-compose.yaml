@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  balancer1: &balancer
+    container_name: balancer1
+    build:
+      context: .
+    restart: always
+    volumes:
+      - ./public:/var/www/html
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+  balancer2:
+    container_name: balancer2
+    <<: *balancer
+  
+  balancer-loadbalancer:
+    container_name: balancer-loadbalancer
+    image: nginx:1.25-bookworm
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+    ports:
+      - 9000:9000
+    volumes:
+      - ./conf/default.conf:/etc/nginx/conf.d/default.conf
